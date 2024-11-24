@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View our products and add to cart or just browse">
+    <meta name="keywords" content="shopping,products,catelog, shop">
+  <title>Our Collection - Your Jewelry Shop</title>
+  <link rel="stylesheet" href="products_styles.css"> <!-- Link to specific styles for products page -->
+    <script src="cart.js"></script>
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Our Collection</a>
+          <ul class="dropdown-content">
+            <li><a href="products.html">Shop All</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="custom.html">Custom Order</a></li>
+        <li><a href="cart.html" class="cart">Cart (0)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Product Filter and Sort Options -->
+  <div class="filter-sort-container">
+    <div class="filter">
+      <label for="filter-select">Filter by:</label>
+      <select id="filter-select">
+        <option value="all">All Products</option>
+        <option value="necklaces">Necklaces</option>
+        <option value="bracelets">Bracelets</option>
+      </select>
+    </div>
+    <div class="sort">
+      <label for="sort-select">Sort by:</label>
+      <select id="sort-select">
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="products-grid">
+    <!-- Example Product Listing 1 -->
+    <div class="product">
+      <img src="https://i.imgur.com/mIWdYZj.jpeg" referrerpolicy="no-referrer" alt="Triple Pearl Classic">
+      <h3>Triple Pearl Classic</h3>
+      <p>Black leather featuring 3 pearls on the front with a single pearl loop clasp on back.</p>
+      <p><strong>Price:</strong> $39.99</p>
+      <button onclick="addToCart('Triple Pearl Classic', 39.99)">Add to Cart</button>
+      <div class="product-description">
+        <p>This is a detailed product description with all the features and benefits of the product.</p>
+      </div>
+      <button class="view-details-btn">View Details</button>
+    </div>
+
+    <!-- Example Product Listing 2 -->
+    <div class="product">
+      <img src="https://i.imgur.com/mIWdYZj.jpeg" referrerpolicy="no-referrer" alt="Natural Stone Bracelet">
+      <h3>Natural Stone Bracelet</h3>
+      <p>Natural stone bracelet featuring unique earthy tones.</p>
+      <p><strong>Price:</strong> $29.99</p>
+      <button onclick="addToCart('Natural Stone Bracelet', 29.99)">Add to Cart</button>
+      <div class="product-description">
+        <p>This is a detailed product description with all the features and benefits of the product.</p>
+      </div>
+      <button class="view-details-btn">View Details</button>
+    </div>
+  </div>
+    
+    
+     <!-- Example Product Listing 3 -->
+    <div class="product">
+      <img src="https://i.imgur.com/mIWdYZj.jpeg" referrerpolicy="no-referrer" alt="Natural Stone Bracelet">
+      <h3>Natural Stone Bracelet</h3>
+      <p>Natural stone bracelet featuring unique earthy tones.</p>
+      <p><strong>Price:</strong> $29.99</p>
+      <button onclick="addToCart('Natural Stone Bracelet', 29.99)">Add to Cart</button>
+      <div class="product-description">
+        <p>This is a detailed product description with all the features and benefits of the product.</p>
+      </div>
+      <button class="view-details-btn">View Details</button>
+    </div>
+  </div>
+
+  <footer>
+        <p>&copy; Tribal Surf Style | Contact us at <a href="tribalsurf30a@gmail.com">tribalsurf30a@gmail.com</a></p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/tribalsurf30a" target="_blank">
+                <img src="https://i.imgur.com/6QzKhtx.png" referrerpolicy="no-referrer" alt="Instagram" class="social-icon">
+            </a>
+        </div>
+    </footer>
+
+  <script src="cart.js"></script>
+  <script>
+    // View Details Button Functionality
+    document.querySelectorAll(".view-details-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const description = button.previousElementSibling;
+        description.classList.toggle("show");
+
+        // Update button text
+        button.textContent = description.classList.contains("show")
+          ? "Hide Details"
+          : "View Details";
+      });
+    });
+  </script>
+</body>
+</html>
